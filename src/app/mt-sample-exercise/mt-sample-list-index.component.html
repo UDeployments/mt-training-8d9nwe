@@ -1,0 +1,53 @@
+<h5>Farms List</h5>
+<div class="row">
+  <div class="col-md-6">
+    <!-- This is the filter: by No and by Active Date -->
+    <div class="form-group">
+      <label for="filterDowpDown">Filter By</label>
+      <select
+        id="filterDowpDown"
+        class="form-control"
+        (change)="applyFilter($event)"
+      >
+        <option value="nofilter">Select Filter</option>
+        <option value="no">No</option>
+        <option value="activedate">Active Date</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-outline-danger btn-sm" (click)="handleError()">
+      Error Button
+    </button>
+  </div>
+</div>
+<div class="row mt-2">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Farm No</th>
+        <th scope="col">Farm Name</th>
+        <th scope="col">Active Date</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<div class="row">
+  <ejs-grid
+    #mastergrid
+    id="mastergrid"
+    [dataSource]="selectfarm.dataFarms"
+    (rowSelected)="onRowSelected($event)"
+  >
+    <e-columns>
+      <e-column field="FarmNo" headerText="Farm No" width="150"></e-column>
+      <e-column field="FarmName" headerText="Farm Name" width="150"></e-column>
+      <e-column
+        field="ActiveDate"
+        headerText="Active Date"
+        width="150"
+      ></e-column>
+    </e-columns>
+  </ejs-grid>
+</div>

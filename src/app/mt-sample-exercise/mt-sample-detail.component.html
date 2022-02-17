@@ -1,0 +1,19 @@
+<h5>Farm Selected</h5>
+<ejs-grid
+  #detailgrid
+  id="detailgrid"
+  [dataSource]="selectedFarm.dataDetailFarm"
+  [allowSelection]="false"
+>
+  <e-columns>
+    <e-column field="Id" headerText="ID" width="50" type="number"></e-column>
+    <e-column field="FarmNo" headerText="Farm No" width="150"></e-column>
+    <e-column field="FarmName" headerText="Farm Name" width="150"></e-column>
+    <e-column
+      field="ActiveDate"
+      headerText="Active Date"
+      width="150"
+    ></e-column>
+    <e-column field="Address" headerText="Address" width="150"></e-column>
+  </e-columns>
+</ejs-grid>
